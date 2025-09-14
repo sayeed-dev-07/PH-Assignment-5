@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+svg{
+    will-change: transform;
+    height: 1.5rem;
+    width: 1.5rem;
+    transition: transform 0.3s ease;
+}
+section{
+    max-width: 70%;
+    margin: 1.5rem auto;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+}
+h1{
+    font-size: 2.7rem;
+    font-weight: 500;
+    font-family: 'coiny', sans-serif;
+    margin-bottom: 2rem;
+}
+.question-container{
+    cursor: pointer;
+    width: 100%;
+    border: 2px solid rgba(41, 39, 39, 0.779);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #F2F2F2;
+    margin-bottom: 2rem;
+}
+.question{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.6rem;
+}
+.answer{
+    font-size: 1.2rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+.answer p{
+    padding-top: 1.2rem;
+}
+.question-container.active .answer p{
+    animation: fade 0.3s ease;
+}
+
+.question-container.active .answer{
+    
+    max-height: 300px;
+    transition: max-height 0.3s ease;
+}
+.question-container.active > .question > svg{
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+@keyframes fade{
+    from{
+        opacity: 0;
+        padding-top: 0;
+    }
+    to{
+        opacity: 1;
+        padding-top: 1.2rem;
+    }
+}
